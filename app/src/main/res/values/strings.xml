@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">Информационный портал</string>
+    <string name="app_name">Nure.info</string>
     <string name="search_title">Search</string>
     <string name="menu_item_news">Новости</string>
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
+
+    <string name="tab_item_news">Новости</string>
+    <string name="tab_item_blog">Блог</string>
 </resources>
