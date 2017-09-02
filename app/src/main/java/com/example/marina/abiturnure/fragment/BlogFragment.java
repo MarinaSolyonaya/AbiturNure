@@ -39,6 +39,6 @@ public class BlogFragment extends AbstractTabFragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(LAYOUT, container,false);
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return view;
     }
 }

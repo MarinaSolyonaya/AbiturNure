@@ -13,7 +13,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:windowBackground">@color/windowBackground</item>
-        <item name="colorControlNormal">@color/windowBackground</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
          <item name="android:textColorSecondary">@color/secondary_text_material_light</item>
         <item name="android:textColorSecondaryInverse">@color/secondary_text_material_dark</item>
 

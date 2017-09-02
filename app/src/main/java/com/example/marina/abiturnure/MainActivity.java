@@ -8,10 +8,22 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.example.marina.abiturnure.adapter.NewsListAdapter;
 import com.example.marina.abiturnure.adapter.TabPagerFragmentAdapter;
+import com.example.marina.abiturnure.dto.NewsModel;
+import com.example.marina.abiturnure.network.RestService;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ViewPager viewPager;
     private TabLayout tabLayout;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.mToolBar);
