@@ -19,7 +19,8 @@
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize" android:id="@+id/mToolBar"
+                android:layout_height="?attr/actionBarSize"
+                android:id="@+id/mToolBar"
                 android:minHeight="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                  android:theme="@style/ThemeOverlay.AppCompat.Dark"
@@ -33,6 +34,8 @@
                 app:tabIndicatorHeight="6dp"
                 app:tabSelectedTextColor="@android:color/white"
                 app:tabTextColor="@android:color/white"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
                 />
 
 

@@ -43,6 +43,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
                 .into(holder.photoNews);
 
         holder.title.setText(post.getTitle());
+        holder.textNews.setText(post.getText());
     }
 
     @Override
@@ -56,12 +57,14 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
     public static class NewsViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;
         TextView title;
+        TextView textNews;
         ImageView photoNews;
 
         public NewsViewHolder(View itemView) {
             super(itemView);
             cardView = (CardView) itemView.findViewById(R.id.cardView);
             title = (TextView) itemView.findViewById(R.id.titleNews);
+            textNews = (TextView) itemView.findViewById(R.id.textNews);
             photoNews = (ImageView) itemView.findViewById(R.id.photoNews);
         }
     }
