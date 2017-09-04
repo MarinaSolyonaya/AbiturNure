@@ -56,9 +56,9 @@ public class NewsFragment extends AbstractTabFragment{
         restService = ServiceGenerator.getApi();
         news = new ArrayList<>();
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
-        NewsListAdapter adapter = new NewsListAdapter(context,news);
+        final NewsListAdapter adapter = new NewsListAdapter(context,news);
         recyclerView.setAdapter(adapter);
 
         restService.getNews().enqueue(new Callback<List<NewsModel>>() {
@@ -73,6 +73,8 @@ public class NewsFragment extends AbstractTabFragment{
                 Toast.makeText(context, "An error occurred during networking", Toast.LENGTH_SHORT).show();
             }
         });
+
+
         return view;
     }
 

@@ -3,6 +3,8 @@ package com.example.marina.abiturnure.adapter;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +22,15 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
     private List<NewsModel> data;
     Context context;
 
+
+
     public NewsListAdapter(Context context, List<NewsModel> data) {
 
         this.data = data;
         this.context=context;
     }
+
+
 
     @Override
     public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -42,8 +48,11 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
                 .resize(100, 100)
                 .into(holder.photoNews);
 
-        holder.title.setText(post.getTitle());
+        holder.title.setText(Html.fromHtml("<a href="+post.getUrl()+">"+post.getTitle()+"</a>"));
+        holder.title.setMovementMethod(LinkMovementMethod.getInstance());
         holder.textNews.setText(post.getText());
+        holder.dateNews.setText(post.getDate());
+        holder.authorNews.setText(post.getAuthor());
     }
 
     @Override
@@ -58,6 +67,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
         CardView cardView;
         TextView title;
         TextView textNews;
+        TextView dateNews;
+        TextView authorNews;
         ImageView photoNews;
 
         public NewsViewHolder(View itemView) {
@@ -65,6 +76,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
             cardView = (CardView) itemView.findViewById(R.id.cardView);
             title = (TextView) itemView.findViewById(R.id.titleNews);
             textNews = (TextView) itemView.findViewById(R.id.textNews);
+            dateNews = (TextView) itemView.findViewById(R.id.dateNews);
+            authorNews = (TextView) itemView.findViewById(R.id.authorNews);
             photoNews = (ImageView) itemView.findViewById(R.id.photoNews);
         }
     }
